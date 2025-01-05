@@ -1,3 +1,19 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+html.light {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #3a4f39; /* Texto verde oscuro */
+}
+
+html.dark {
+  background-color: #1b1b1b; /* Fondo negro carbón */
+  color: #ffffff; /* Texto blanco */
+}
+
+html {
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
