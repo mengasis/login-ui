@@ -1,38 +1,114 @@
-# sv
+# **[WIP] Login Module Frontend**
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This project is a **frontend template** for a modular **login system** built with **Svelte** and powered by **Bun.js**. It is designed to be a flexible starting point for connecting to any authentication API, making it easy to integrate with your existing backend.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## **Features**
 
-```bash
-# create a new project in the current directory
-npx sv create
+- 🌟 **Modular Design**: Built with Svelte's component architecture for flexibility and reusability.
+- ⚡ **Powered by Bun.js**: Blazing-fast performance and modern tooling.
+- 🎨 **Theming**: Includes light and dark mode with clean transitions and customizable colors.
+- 🔗 **API-Ready**: Designed to easily connect to any authentication API (JWT, cookies, OAuth, etc.).
+- 📱 **Responsive**: Fully optimized for both desktop and mobile devices.
+- 🔐 **Authentication Flow**:
+  - **Login**: Authenticate existing users.
+  - **Sign Up**: Register new users.
+  - **Profile Page**: Display user details once authenticated.
 
-# create a new project in my-app
-npx sv create my-app
+---
+
+## **Tech Stack**
+
+- **Svelte**: Lightweight and reactive UI framework.
+- **Bun.js**: Ultra-fast JavaScript runtime and build tool.
+- **TailwindCSS**: For utility-first styling with flexibility.
+- **TypeScript**: Extendable for type safety.
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+Make sure you have the following installed:
+
+- [Bun.js](https://bun.sh/) (latest version)
+- A modern browser for testing
+
+---
+
+### **Installation**
+
+1. Clone the repository:
+
+```
+git clone https://github.com/yourusername/login-module-template.git
+cd login-module-template
 ```
 
-## Developing
+2. Install dependencies using **Bun**:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```
+npm install
+```
 
-```bash
+3. Start the development server:
+
+```
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+4. Open your browser at [http://localhost:3000](http://localhost:3000) to view the project.
 
-To create a production version of your app:
+---
 
-```bash
+## **Project Structure**
+
+```
+src/
+├── lib/
+│   ├── components/   # Reusable Svelte components
+│   ├── stores/       # App-wide state management (e.g., user authentication)
+├── routes/
+│   ├── +layout.svelte  # Global layout (Navbar, Footer, etc.)
+│   ├── login/          # Login page
+│   ├── signup/         # Sign-up page
+│   ├── profile/        # Profile page (protected)
+```
+
+---
+
+## **Usage**
+
+### **Run in Development Mode**
+
+```
+npm run dev
+```
+
+### **Build for Production**
+
+```
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## **Roadmap**
+
+- [ ] Add support for social logins (Google, GitHub, etc.).
+- [ ] Add unit and integration tests with Vitest.
+- [ ] Support for multi-language UI with i18n.
+- [ ] Improve keyboard navigation, ARIA roles, and screen reader support.
+- [ ] Add sleek loading indicators or spinners for form submissions.
+- [ ] Passwordless module
+- [ ] Biometric authentication
+- [ ] Multi-Step Login
+- [ ] Captcha integration
+
+
+---
+
+## **License**
+
+This project is licensed under the [MIT License](LICENSE).
