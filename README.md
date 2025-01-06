@@ -30,6 +30,7 @@ This project is a **frontend template** for a modular **login system** built wit
 ## **Getting Started**
 
 ### **Prerequisites**
+
 Make sure you have the following installed:
 
 - [Bun.js](https://bun.sh/) (latest version)
@@ -105,7 +106,6 @@ npm run build
 - [ ] Biometric authentication
 - [ ] Multi-Step Login
 - [ ] Captcha integration
-
 
 ---
 
