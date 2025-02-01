@@ -1,6 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import AuthContainer from '$lib/components/AuthContainer.svelte';
+  import GoogleSignInButton from '$lib/components/GoogleSignInButton.svelte';
   import { auth } from '$lib/stores/auth';
   import type { AuthMethod } from '$lib/types/auth';
 
@@ -56,6 +57,7 @@
         </svg>
       </button>
     {/each}
+    <GoogleSignInButton />
   </div>
 
   <div class="mt-8 text-center">
