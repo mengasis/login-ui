@@ -1,19 +1,24 @@
 import { writable } from 'svelte/store';
-import axios from 'axios';
-import api from '$lib/config/api';
-export const isAuthenticated = writable<boolean>(false);
+import type { AuthState, AuthMethod } from '$lib/types/auth';
 
-export const logout = async () => {
-  await axios.post(
-    `${api.BASE_URL}${api.ENDPOINTS.LOGOUT}`,
-    {},
-    {
-      withCredentials: true
-    }
-  );
-  isAuthenticated.set(false);
+const initialState: AuthState = {
+  email: '',
+  isAuthenticated: false,
+  selectedMethod: null,
+  error: null
 };
 
-export const login = () => {
-  isAuthenticated.set(true);
-};
+function createAuthStore() {
+  const { subscribe, set, update } = writable<AuthState>(initialState);
+
+  return {
+    subscribe,
+    setEmail: (email: string) => update(state => ({ ...state, email })),
+    setMethod: (method: AuthMethod) => update(state => ({ ...state, selectedMethod: method })),
+    setError: (error: string | null) => update(state => ({ ...state, error })),
+    setAuthenticated: (isAuthenticated: boolean) => update(state => ({ ...state, isAuthenticated })),
+    reset: () => set(initialState)
+  };
+}
+
+export const auth = createAuthStore();

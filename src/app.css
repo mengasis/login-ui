@@ -3,13 +3,13 @@
 @import 'tailwindcss/utilities';
 
 html.light {
-  background-color: #ffffff; /* Fondo blanco */
-  color: #3a4f39; /* Texto verde oscuro */
+  background-color: #ffffff; 
+  color: #3a4f39;
 }
 
 html.dark {
-  background-color: #1b1b1b; /* Fondo negro carbón */
-  color: #ffffff; /* Texto blanco */
+  background-color: #1b1b1b; 
+  color: #ffffff;
 }
 
 html {
