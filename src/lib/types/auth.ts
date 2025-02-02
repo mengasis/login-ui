@@ -3,7 +3,8 @@ export type AuthMethod =
   | 'otp'
   | 'mfa'
   | 'passkey'
-  | 'biometric';
+  | 'biometric'
+  | 'magic-link';
 
 export interface AuthState {
   email: string;
