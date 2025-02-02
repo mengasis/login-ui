@@ -1,20 +1,21 @@
-# **[WIP] Login Module Frontend**
+# **Login Authentication Module**
 
-This project is a **frontend template** for a modular **login system** built with **Svelte** and powered by **Bun.js**. It is designed to be a flexible starting point for connecting to any authentication API, making it easy to integrate with your existing backend.
+This project is a **frontend module** for implementing **multiple authentication methods** built with **Svelte** and powered by **Bun.js**. It provides a flexible and secure way to integrate various authentication methods into your application, making it easy to offer users different login options while maintaining security best practices.
 
 ---
 
 ## **Features**
 
-- 🌟 **Modular Design**: Built with Svelte's component architecture for flexibility and reusability.
-- ⚡ **Powered by Bun.js**: Blazing-fast performance and modern tooling.
-- 🎨 **Theming**: Includes light and dark mode with clean transitions and customizable colors.
-- 🔗 **API-Ready**: Designed to easily connect to any authentication API (JWT, cookies, OAuth, etc.).
-- 📱 **Responsive**: Fully optimized for both desktop and mobile devices.
-- 🔐 **Authentication Flow**:
-  - **Login**: Authenticate existing users.
-  - **Sign Up**: Register new users.
-  - **Profile Page**: Display user details once authenticated.
+- 🔐 **Multiple Authentication Methods**:
+  - **Password-based**: Traditional username/password authentication
+  - **Passkeys**: WebAuthn/FIDO2 support for passwordless authentication
+  - **Magic Links**: Email-based passwordless authentication
+  - **Social Login**: Social login integration
+- 🌟 **Modular Design**: Each authentication method is a self-contained module
+- ⚡ **Powered by Bun.js**: Blazing-fast performance and modern tooling
+- 🎨 **Theming**: Includes light and dark mode with clean transitions
+- 🔗 **API-Ready**: Designed to easily connect to any authentication backend
+
 
 ---
 
@@ -69,12 +70,16 @@ npm run dev
 src/
 ├── lib/
 │   ├── components/   # Reusable Svelte components
-│   ├── stores/       # App-wide state management (e.g., user authentication)
+│   ├── stores/       # Authentication state management
 ├── routes/
-│   ├── +layout.svelte  # Global layout (Navbar, Footer, etc.)
-│   ├── login/          # Login page
-│   ├── signup/         # Sign-up page
-│   ├── profile/        # Profile page (protected)
+│   ├── +layout.svelte     # Global layout
+│   ├── auth/
+│   │   ├── methods/       # Authentication method selector
+│   │   ├── password/      # Traditional password login
+│   │   ├── passkey/       # WebAuthn/FIDO2 authentication
+│   │   ├── magic-link/    # Email-based authentication
+│   ├── home/           # WIP
+│   ├── example/        # WIP
 ```
 
 ---
@@ -97,15 +102,13 @@ npm run build
 
 ## **Roadmap**
 
-- [ ] Add support for social logins (Google, GitHub, etc.).
-- [ ] Add unit and integration tests with Vitest.
-- [ ] Support for multi-language UI with i18n.
-- [ ] Improve keyboard navigation, ARIA roles, and screen reader support.
-- [ ] Add sleek loading indicators or spinners for form submissions.
-- [ ] Passwordless module
-- [ ] Biometric authentication
-- [ ] Multi-Step Login
-- [ ] Captcha integration
+- [x] Traditional password authentication
+- [x] Passkey (WebAuthn/FIDO2) support
+- [x] Authentication method selector
+- [ ] Magic Link implementation
+- [-] OAuth social logins (Google, GitHub, etc.)
+- [ ] Multi-factor authentication (MFA)
+- [ ] Enhanced security features (rate limiting, breach detection)
 
 ---
 
